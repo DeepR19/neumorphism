@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate</title>
+</head>
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: #eaeaea;
+        cursor: grab;
+        
+    }
+    section{
+        position: absolute;
+       top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        width: 80%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        perspective: 1200px;
+        z-index: -1;
+    }
+    section > div
+    {
+        position: relative;
+        height: 18%;
+        width: 8%;
+        background: repeating-linear-gradient(0deg,#000 0px , #000 10px, #ddd 10px, #ddd 20px),
+                    repeating-linear-gradient(90deg,#000 0px , #000 10px, #ddd 10px, #ddd 20px);
+        background-size: 150px;
+        transform-style: preserve-3d;
+        perspective: 1200px;
+        /* transform: rotateX(80deg); */
+        background-blend-mode: difference;
+        transform-origin: center;
+        animation: amin 2s linear infinite;
+        margin: -51px;
+        border-radius: 50%;
+        background-position: fixed;
+        
+    }
+    @keyframes amin
+    {
+        0%
+        {
+            transform-style: preserve-3d;
+            perspective: 1200px;
+            transform: rotate(0deg) rotateZ(100deg) ;
+        }
+        50%
+        {
+            transform-style: preserve-3d;
+            perspective: 1200px;
+            transform: rotate(180deg) rotateZ(120deg) ; 
+        }
+        100%
+        {
+            transform-style: preserve-3d;
+            perspective: 1200px;
+            transform: rotate(360deg) rotateZ(100deg) ; 
+        }
+    }
+    .sec1
+    {
+        position: relative;
+        top: 100px;
+        left: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: chartreuse; */
+    }
+    .sec2
+    {
+        position: relative;
+        top: 62%;
+        left: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: chartreuse; */
+    }
+
+    .rod1
+    {
+        position: relative;
+        height: 150px;
+        width: 150px;
+        margin: -45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 100px;
+        border-radius: 50%;
+        opacity: .6;
+        background: #eaeaea;
+        box-shadow: 5px 5px 10px #0005,
+                    -5px -5px 10px #fff;
+    }
+    .rod2
+    {
+        
+        position: relative;
+        height: 70%;
+        width: 70%;
+        top: 0;
+        display: flex;
+        border-radius: 50%;
+        /* background: #eaeaea; */
+        box-shadow:inset 5px 5px 10px #0005,
+                   inset  -5px -5px 10px #fff;
+                   overflow: hidden;
+        animation: mate 5s linear infinite;
+    }
+    @keyframes mate
+    {
+        0%
+        {
+            filter: hue-rotate(0deg);
+            background: chartreuse;
+        }
+        100%
+        {
+            filter: hue-rotate(360deg);
+        }
+    }
+    .rod3
+    {
+        
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        top: 30%;
+        left: 40px;
+        transform: translate(-50%,-50%);
+        display: block;
+        border-radius: 50%;
+        background: #eaeaea;
+        box-shadow: 5px 5px 18px #0005,
+                   -5px -5px 10px #fff;
+
+    }
+    h1
+    {
+        position: absolute;
+        top: 200px;
+       font-size: 6em;
+       /* background: chartreuse; */
+       width: 1200px;
+       transform: rotate(-20deg);
+       color: #eaeaea;
+       text-shadow: 2px 2px 8px #0004,
+       2px 2px 10px #fff;
+       pointer-events: none;
+       font-weight:bold;
+       font-family: cursive;
+       text-transform: uppercase;
+       z-index: 1000;
+    }
+    h1::selection
+    {
+        background: #eaeaea;
+    }
+</style>
+<body>
+    <section>
+        <!-- <div class="fir">
+            <div class="rod" style="--i:0"></div>
+            <div class="rod" style="--i:1"></div>
+            <div class="rod" style="--i:2"></div>
+            <div class="rod" style="--i:3"></div>
+            <div class="rod" style="--i:4"></div>
+            <div class="rod" style="--i:5"></div>
+            <div class="rod" style="--i:6"></div>
+            <div class="rod" style="--i:7"></div>
+            <div class="rod" style="--i:8"></div>
+            <div class="rod" style="--i:9"></div>
+        </div> -->
+
+        
+    
+        <section class="sec1">
+            <span class="rod1" style="--j:0">
+                <span class="rod2" >
+                    <span class="rod3"></span>
+                </span>
+                
+            </span>
+
+            <span class="rod1" style="--j:2">
+                <span class="rod2" >
+                    <span class="rod3"></span>
+                </span>
+                
+            </span>
+
+        </section><h1>Made By Deepak/34</h1>
+        <section class="sec2">
+            <span class="rod1" style="--j:0">
+                <span class="rod2" >
+                    <span class="rod3"></span>
+                </span>
+                
+            </span>
+
+            <span class="rod1" style="--j:2">
+                <span class="rod2" >
+                    <span class="rod3"></span>
+                </span>
+                
+            </span>
+
+        </section>
+    </section>
+        
+
+
+
+    <script>
+   
+        document.querySelector("body").addEventListener("mousemove",() => {
+
+            let eye = document.querySelectorAll(".rod2");
+         
+
+            eye.forEach((eye) => {
+                let x= (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+
+                let y= (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+                let rad = Math.atan2(event.pageX - x, event.pageY - y);
+
+                let rot = (rad *(180 / Math.PI) * -1) + 220;
+
+                eye.style.transform = "rotate(" + rot + "deg)";
+                // eye.style.top = "top :" + x + "px";
+                // eye.style.left = "left" + y + "px";
+            })
+        })
+
+        
+    </script>
+</body>
+</html>
